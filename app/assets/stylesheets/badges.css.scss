@@ -1,0 +1,6 @@
+#badges-list {
+  @include row;
+  .badge {
+    @include span-columns(3);
+  }
+}

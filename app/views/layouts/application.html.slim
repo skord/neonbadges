@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Neonbadges
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    #outer-container
+      = render 'shared/topbar'
+      #flash-messages
+        - if notice
+          .flash-message.notice= notice
+        - if alert
+          .flash-message.alert= alert
+      == yield
+      footer#footer
+        .footer-column
+          h3 About
+          p NeonBadges is something that occured to me when I was getting and giving help, compliments, and fun times with the folks at #{link_to 'Neo Innovation', 'http://neo.com'}.
+          p I wanted a fun way to let those things be permanent, hence NeonBadges was born.
+        .footer-column
+          h3 Helpful Stuff
+          ul
+            li= link_to 'Making Badges', '#'
+            li= link_to 'Badge Design', '#'
+            li= link_to 'API', '#'
+            li= link_to 'Privacy', '#'
+        .footer-column
+          h3 ???
+        .footer-column
+          h3 Baked With Love

@@ -1,0 +1,7 @@
+= link_to 'New Badge', new_badge_path, class: 'button'
+#badges-list
+  - @badges.each do |badge|
+    .badge
+      = image_tag badge.image
+      =link_to badge.name, badge
+  = paginate @badges
